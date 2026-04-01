@@ -2,23 +2,6 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(regs) {
-          if (regs.length > 0) {
-            Promise.all(
-              regs.map(function(r) { return r.unregister(); })
-            ).then(function() {
-              return caches.keys();
-            }).then(function(keys) {
-              return Promise.all(keys.map(function(k) { return caches.delete(k); }));
-            }).then(function() {
-              window.location.reload(true);
-            });
-          }
-        });
-      }
-    </script>
     <link rel="icon" type="image/png" href="/logo_union_colegiada.png?v=2" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unión Colegiada del Notariado Colombiano</title>
